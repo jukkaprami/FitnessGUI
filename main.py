@@ -31,8 +31,8 @@ if __name__ == "__main__":
     # Create the application
     app = QtWidgets.QApplication(sys.argv)
 
-    # Create the mainwindow(and show it)
-    appWindow = MainWindow()
+    # Create the Mainwindow(and show it)
+    appWindow = Mainwindow()
     appWindow.main.show()
     sys.exit(app.exec())
 
