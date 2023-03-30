@@ -22,7 +22,8 @@ def test_yhdeksanhenkea(self):
     self.assertrue.Equal('secret_word', )
 def test_generate_password_success (self):
     actual = len (generate_password())
-    expected 
+    expected
+
 while lives > 0:
     print(clue)
     print('henkia jaljella: ' + heart_symbol * lives)
