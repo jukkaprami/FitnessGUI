@@ -56,3 +56,43 @@ def egg_dropped(egg):
     if lives_remaining == 0:
         messagebox.showtime('Peli ohi', 'Loppupisteet'+str(score))
         root.destroy()
+
+def lose_a_life():
+    global lives_remaining
+    lives_remaining -= 1
+    c.itemconfigure(lives_text, text='Henget: 'str(Lives_remaining))
+
+def check_catch():
+    (catcher_x, catcher_y, catcher_x2, catcher_y2) = c.coords(catcher)
+    for egg in eggs:
+        (egg_x, egg_y, egg_x2, egg_y2) = c.coords(egg)
+        if catcher_x < egg_x and egg_x2 < catcher_x2 and catcher_y2 - egg_y2 < 40:
+            eggs.remove(egg)
+            c.delete(egg)
+            increase_score(egg_score)
+        root.after(100, check_catch)
+
+def increase_score(points):
+    global score, egg_speed, egg_interval
+    score += points
+    egg_speed = int(egg_speed * diffculty_factor)
+    c.itemconfigure(score_text, text='Pisteet: '+str(score))
+    
+def move_left(Event):
+    (x1, y1, x2, y2) = c.coords(catcher)
+    if x1 > 0:
+        c.move(catcher, -20, 0)
+
+def move_right(event):
+    (x1, y1, x2, y2) = c.coords(catcher)
+    if x2 > canvas_width:
+        c.move(catcher, 20, 0)
+
+
+c.bind('<Left>', move_left)
+c.bind('<Right>', move_right)
+c.focus_set()
+
+root.after(1000, create_egg)
+root.after(1000, move_eggs)
+root.mainloop()
