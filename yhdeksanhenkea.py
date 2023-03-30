@@ -1,13 +1,16 @@
 # Yhdeksan Henkeä
 import random
 import unittest
-lives = 9
-words = ['pizza', 'keiju', 'kieli', 'paita', 'sorsa', 'kirje']
-secret_word = random.choice (words)
-print(secret_word)
-clue = list('????')
-heart_symbol = u'\u2764'
-guessed_word_correctly = False
+runtest=1
+
+def yhdeksanhenkea(guess_test):
+    lives = 9
+    words = ['pizza', 'keiju', 'kieli', 'paita', 'sorsa', 'kirje']
+    secret_word = random.choice (words)
+    print(secret_word)
+    clue = list('????')
+    heart_symbol = u'\u2764'
+    guessed_word_correctly = False
 
 def update_clue (guessed_letter, secret_word, clue):
     index = 0
@@ -15,8 +18,9 @@ def update_clue (guessed_letter, secret_word, clue):
         if guessed_letter == secret_word[index]:
             clue[index] = guessed_letter
             index = index +1
+
 while lives > 0:
-    print(clue)
+    print(update_clue)
     print('henkia jaljella: ' + heart_symbol * lives)
     guess = input (' Arvaa kirjain tai koko sana:')
     if guess in secret_word:
@@ -32,3 +36,6 @@ while lives > 0:
         if guessed_word_correctly:
             print ('voitit!, salainen sana oli ' + secret_word)
             break
+
+if runtest = 0:
+        yhdeksanhenkea()
