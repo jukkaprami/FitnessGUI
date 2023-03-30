@@ -16,6 +16,13 @@ def update_clue (guessed_letter, secret_word, clue):
             clue[index] = guessed_letter
             index = index +1
 
+runtest=0
+class yhdeksanhenkea
+def test_yhdeksanhenkea(self):
+    self.assertrue.Equal('secret_word', )
+def test_generate_password_success (self):
+    actual = len (generate_password())
+    expected 
 while lives > 0:
     print(clue)
     print('henkia jaljella: ' + heart_symbol * lives)
