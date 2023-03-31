@@ -6,7 +6,7 @@ import sys
 from PyQt5 import *
 from PyQt5 import QtCore # Core functionality of Qt
 from PyQt5 import QtWidgets # UI elements functionality
-from PyQt5.uic.load_ui import loadUi
+from PyQt5.uic import loadUi
 
 # Class for the main window
 class Mainwindow(QtWidgets.QMainWindow):
