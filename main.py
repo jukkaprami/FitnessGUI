@@ -9,6 +9,7 @@ from PyQt5 import QtWidgets # UI elements functionality
 from PyQt5.uic import loadUi
 import kuntoilija
 import timetools
+# TODO: Import some library able to plot trends and make it as widget in the UI
 
 # Class for the main window
 class Mainwindow(QtWidgets.QMainWindow):
@@ -41,6 +42,7 @@ class Mainwindow(QtWidgets.QMainWindow):
         self.CalculatePB = self.CalculateButton
         self.CalculatePB.clicked.connect(self.calculateAll)
 
+        # TODO: Disable Save Button until new values are calculated 
         self.savePB = self.SaveButton
         self.savePB.clicked.connect(self.saveData)
 
@@ -75,11 +77,11 @@ class Mainwindow(QtWidgets.QMainWindow):
 
         self.BMILabel.setText(str(bmi))
 
-
+    # TODO: Make this method to save results to disk drive
     # Saves data to disk
     def saveData(self):
         pass
-
+ 
 if __name__ == "__main__":
     # Create the application
     app = QtWidgets.QApplication(sys.argv)
