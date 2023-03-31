@@ -37,7 +37,7 @@ class Mainwindow(QtWidgets.QMainWindow):
         self.waistSB = self.Waist
         self.hipSB = self.Hip
         
-
+        # TODO: Disable Calculate button until have been edited
         self.CalculatePB = self.CalculateButton
         self.CalculatePB.clicked.connect(self.calculateAll)
 
