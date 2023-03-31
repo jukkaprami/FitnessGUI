@@ -3,9 +3,10 @@
 
 # LIBRARIES AND MODULES
 import sys
-from PyQt6 import QtCore # Core functionality of Qt
-from PyQt6 import QtWidgets # UI elements functionality
-from PyQt6.uic.load_ui import loadUi
+from PyQt5 import *
+from PyQt5 import QtCore # Core functionality of Qt
+from PyQt5 import QtWidgets # UI elements functionality
+from PyQt5.uic.load_ui import loadUi
 
 # Class for the main window
 class Mainwindow(QtWidgets.QMainWindow):
@@ -17,7 +18,7 @@ class Mainwindow(QtWidgets.QMainWindow):
         super()._init_()
 
     # Load the UI file
-        self.main = loadUi('main.ui', self)
+        loadUi('main.ui', self)
 
     # Define UI controls ie buttons and input fields
         self.CalculatePB = self.CalculateButton
