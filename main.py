@@ -14,8 +14,8 @@ class Mainwindow(QtWidgets.QMainWindow):
     """MainWindow for the fitness app"""
 
     # Constructor for the main window
-    def _init_(self):
-        super()._init_()
+    def __init__(self):
+        super().__init__()
 
     # Load the UI file
         loadUi('main.ui', self)
