@@ -21,6 +21,9 @@ class Mainwindow(QtWidgets.QMainWindow):
         loadUi('main.ui', self)
 
     # Define UI controls ie buttons and input fields
+
+        self.HeightSB = self.height
+        self.WeightSB = self.weight
         self.CalculatePB = self.CalculateButton
         self.CalculatePB.clicked.connect(self.calculateAll)
 
