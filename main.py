@@ -48,6 +48,7 @@ class Mainwindow(QtWidgets.QMainWindow):
 
     # Calculates BMI, Finnish and US fat percentages and updates correspoding labels
     def calculateAll(self):
+        name = self.nameLE.text()
         height = self.heightSB.value()
         weight = self.weightSB.value()
 
@@ -60,7 +61,7 @@ class Mainwindow(QtWidgets.QMainWindow):
             gender = 1
 
         else:
-            Gender = 0
+            gender = 0
 
         # Convert weighing data to ISO string
         dateofweighing = self.weighingDateEdit.date().toString(format=QtCore.Qt.ISODate)
@@ -69,10 +70,10 @@ class Mainwindow(QtWidgets.QMainWindow):
         age = timetools.datediff2(birthday, dateofweighing, 'year')
 
         # Create and athelete from kuntoilija class
-        # athlete = kuntoilija.Kuntoilija()
-        # bmi = athlete.bmi
+        athlete = kuntoilija.Kuntoilija(name, height, weight, age, gender)
+        bmi = athlete.bmi
 
-        self.BMILabel.setText(dateofweighing)
+        self.BMILabel.setText(str(bmi))
 
 
     # Saves data to disk
