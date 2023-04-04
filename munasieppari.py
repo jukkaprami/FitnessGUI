@@ -46,15 +46,15 @@ def move_eggs():
         (egg_x, egg_y, egg_x2, egg_y2) = c.coords(egg)
         c.move(egg, 0, 10)
         if egg_y2 > canvas_height:
-            egg_dropped(egg)
+            eggs_dropped(egg)
     root.after(egg_speed, move_eggs)
 
-def egg_dropped(egg):
-    eggs.removed(egg)
+def eggs_dropped(egg):
+    eggs.remove(egg)
     c.delete(egg)
     lose_a_life()
     if lives_remaining == 0:
-        messagebox.showtime('Peli ohi', 'Loppupisteet'+str(score))
+        messagebox.showinfo('Peli ohi', 'Loppupisteet'+str(score))
         root.destroy()
 
 def lose_a_life():
