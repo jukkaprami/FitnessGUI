@@ -60,7 +60,7 @@ def egg_dropped(egg):
 def lose_a_life():
     global lives_remaining
     lives_remaining -= 1
-    c.itemconfigure(lives_text, text='Henget: 'str(Lives_remaining))
+    c.itemconfigure(lives_text, text='Henget: '+str(lives_remaining))
 
 def check_catch():
     (catcher_x, catcher_y, catcher_x2, catcher_y2) = c.coords(catcher)
