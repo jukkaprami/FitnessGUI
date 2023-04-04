@@ -9,7 +9,7 @@ x = 0
 y = 0
 
 def draw_star (points, size, col, x. y):
-    piirto_menossa = true
+    piirto_menossa = True
     t.penup ()
     t.goto(x, y)
     t.pendown()
@@ -32,4 +32,22 @@ def tahtikirkas_yo():
         ranCol = (random(), random (), random ())
         ranX = randint (-350, 300)
         ranY = randint (-250, 200)
-        draw_star = 
+        draw_star = (ranPts, ranSize, ranX, ranY)
+        if runtest==1:
+            output=(ranX.real, ranY.real)
+            return output
+        
+    if runtest==0:
+        tahtikirkas_yo()
+
+class test_tahtikirkas_yo():
+    def tahtikirkas_yo_success(self):
+        actual=tahtikirkas_yo()
+        expected x=range(-400,-400)
+        expected y=range(-400,-400)
+        print('actual-',actual)
+        self.assertin(actual(0),expected_x)
+        self.assertin(actual(1),expected_y)
+                      
+
+# Python -m tahtikirkas_yo.py    
