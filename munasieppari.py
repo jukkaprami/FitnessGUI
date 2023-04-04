@@ -6,12 +6,12 @@ canvas_width = 800
 canvas_height = 400
 root = Tk()
 c = Canvas (root, width=canvas_width, height=canvas_height, background='deep sky blue')
-c.create_rectangle(-5, canvas_height -100, canvas_width +5, canvas_height +5, fill='sea green', width=0)
+c.create_rectangle(-5, canvas_height -100, canvas_width + 5, canvas_height + 5, fill='sea green', width=0)
 c.create_oval(-80, -80, 120, 120, fill='orange', width=0)
 c.pack()
 color_cycle = (['light blue', 'light green', 'light pink', 'light yellow', 'light cyan', ])
 egg_width = 45
-egg_height = 5
+egg_height = 55
 egg_score = 10
 egg_speed = 500
 egg_interval = 4000
@@ -37,7 +37,7 @@ eggs = []
 def create_egg():
     x = randrange(10, 740)
     y = 40
-    new_egg = c.create_oval(x, y, x+ egg_width, y + egg_height, fill=next (color_cycle), width=0)
+    new_egg = c.create_oval (x, y, x+ egg_width, y + egg_height, fill=next (color_cycle), width=0)
     eggs.append(new_egg)
     root.after(egg_interval, create_egg)
 
@@ -70,12 +70,13 @@ def check_catch():
             eggs.remove(egg)
             c.delete(egg)
             increase_score(egg_score)
-        root.after(100, check_catch)
+    root.after(100, check_catch)
 
 def increase_score(points):
     global score, egg_speed, egg_interval
     score += points
     egg_speed = int(egg_speed * diffculty_factor)
+    egg_interval = int(egg_interval * diffculty_factor)
     c.itemconfigure(score_text, text='Pisteet: '+str(score))
     
 def move_left(Event):
@@ -95,4 +96,5 @@ c.focus_set()
 
 root.after(1000, create_egg)
 root.after(1000, move_eggs)
+root.after(1000, check_catch)
 root.mainloop()
