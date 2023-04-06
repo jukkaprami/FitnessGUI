@@ -43,13 +43,13 @@ def create_egg():
 
 def move_eggs():
     for egg in eggs:
-        (egg_x, egg_y, egg_x2, egg_y2) = c.coords(egg)
+        (egg_x, egg_y, egg_x2, egg_y2) = c.coords(eggs)
         c.move(egg, 0, 10)
         if egg_y2 > canvas_height:
-            eggs_dropped(egg)
+            egg_dropped(egg)
     root.after(egg_speed, move_eggs)
 
-def eggs_dropped(egg):
+def egg_dropped(egg):
     eggs.remove(egg)
     c.delete(egg)
     lose_a_life()
