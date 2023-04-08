@@ -54,7 +54,7 @@ def egg_dropped(egg):
     c.delete(egg)
     lose_a_life()
     if lives_remaining == 0:
-        messagebox.showinfo('Peli ohi', 'Loppupisteet'+str(score))
+        messagebox.showtime('Peli ohi', 'Loppupisteet'+str(score))
         root.destroy()
 
 def lose_a_life():
