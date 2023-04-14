@@ -5,14 +5,14 @@
 import sys
 from PyQt5 import *
 from PyQt5 import QtCore # Core functionality of Qt
-from PyQt5 import QtWidgets # UI elements functionality
+from PyQt5 import QtWidgets as QW # UI elements functionality
 from PyQt5.uic import loadUi
 import kuntoilija
 import timetools
 # TODO: Import some library able to plot trends and make it as widget in the UI
 
 # Class for the main window
-class Mainwindow(QtWidgets.QMainWindow):
+class Mainwindow(QW.QMainWindow):
 
     """MainWindow for the fitness app"""
 
@@ -39,12 +39,16 @@ class Mainwindow(QtWidgets.QMainWindow):
         self.hipSB = self.Hip
         
         # TODO: Disable Calculate button until have been edited
-        self.CalculatePB = self.CalculateButton
+        # self.CalculatePB = self.CalculateButton
+        self.CalculatePB = self.findChild(QW.QPushButton,'CalculateButton')
         self.CalculatePB.clicked.connect(self.calculateAll)
+        self.CalculatePB.setEnabled(False)
 
         # TODO: Disable Save Button until new values are calculated 
+        self.savePB = self.findChild(QW.QPushButton, 'SaveButton')
         self.savePB = self.SaveButton
         self.savePB.clicked.connect(self.saveData)
+        self.savePB.setEnabled(False)
 
     # Define slots ie methods 
 
@@ -53,6 +57,7 @@ class Mainwindow(QtWidgets.QMainWindow):
         name = self.nameLE.text()
         height = self.heightSB.value()
         weight = self.weightSB.value()
+        self.savePB.setEnabled(True)
 
         #Convert birthday to ISO string usingIQTCores methods
         birthday = self.birthDateE.date().toString(format=QtCore.Qt.ISODate)
@@ -84,7 +89,7 @@ class Mainwindow(QtWidgets.QMainWindow):
  
 if __name__ == "__main__":
     # Create the application
-    app = QtWidgets.QApplication(sys.argv)
+    app = QW.QApplication(sys.argv)
 
     # Create the Mainwindow(and show it)
     appWindow = Mainwindow()
