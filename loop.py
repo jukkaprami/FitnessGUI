@@ -12,3 +12,10 @@ def parillisuus(luku):
 
 if runtest==0:
     parillisuus(2)
+
+class test_loop(unittest.TestCase):
+    def test_loop(self):
+        testiarvo = 1
+        actual = str(parillisuus(testiarvo))
+        excepted = 'pariton'
+    
