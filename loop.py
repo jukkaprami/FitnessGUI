@@ -1,8 +1,8 @@
 import unittest
 runtest=0
 
-def parillisuus():     
-    for counter in range (10):
+def parillisuus(luku):     
+    for counter in range (1, luku +1):
         if (counter % 2) == 0:
             print (counter)
             print ('on parillinen')
@@ -11,4 +11,4 @@ def parillisuus():
             print ('on pariton')
 
 if runtest==0:
-    parillisuus()
+    parillisuus(2)
