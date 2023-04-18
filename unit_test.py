@@ -53,7 +53,7 @@ if runtest==0:
     testattava_funktio(1)
 
 #aja testi kaskylla:
-#python -m unit_test.py
+#python -m unittest unit_test.py
 #luokan nimen tulee olla sama kuin tiedostonnimen (ilman .py paatetta)
 class test_unit_test(unittest.TestCase):
     def test_unit_test_parillinen(self):
@@ -66,7 +66,7 @@ class test_unit_test(unittest.TestCase):
         print('Virhe testifunktion parillisuuden tarkastamisessa' + ' Numero = ' + str(testiarvo) + excepted)
 
         def unit_test_pariton(self):
-            testiarvo = 1
+            testiarvo = 2
             actual = str(testattava_funktio(testiarvo))
             excepted = 'on pariton'
         try:
