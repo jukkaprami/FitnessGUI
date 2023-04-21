@@ -135,7 +135,7 @@ class Mainwindow(QW.QMainWindow):
 
         if age >=18:
 
-            athlete = kuntoilija.Kuntoilija(name, height, age, gender, dateofweighing)
+            athlete = kuntoilija.Kuntoilija(name, gender, height, weight, age, waist, hips, neck, dateofweighing)
                                          
         else:
             athlete = kuntoilija.JunioriKuntoilija(name, height, weight, age, gender)
@@ -167,7 +167,13 @@ class Mainwindow(QW.QMainWindow):
     
     # Saves data to disk
     def saveData(self):
-        pass
+        self.datalist.append(self.dataRow)
+        jsonfile2 = athleteFile.ProcessJsonFile()
+        status = jsonfile2.savedata('atheleteData.json', self.datalist)
+        self.nameLE.clear()
+        zeroDate = QtCore.QDate(1900, 1, 1)
+        self.birthDateE.setDate(zeroDate)
+
  
 if __name__ == "__main__":
     # Create the application

@@ -21,6 +21,8 @@ class ProcessJsonFile(object):
         Returns:
             tuple: Error code, Error message, detailed error message
         """
+        with open(file, 'w') as fileToWrite:
+            json.dump(data, fileToWrite, indent=4)
         status = (0, 'Tallennus onnistui', 'All data saved succesfully')
         return status
 
