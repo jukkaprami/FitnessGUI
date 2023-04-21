@@ -48,13 +48,11 @@ class Mainwindow(QW.QMainWindow):
         self.hipSB.setEnabled(False)
         self.hipSB = self.hipSB.valueChanged.connect(self.activateCalculatePB)
         
-        # TODO: Disable Calculate button until have been edited
         # self.CalculatePB = self.CalculateButton
         self.CalculatePB = self.findChild(QW.QPushButton,'CalculateButton')
         self.CalculatePB.clicked.connect(self.calculateAll)
         self.CalculatePB.setEnabled(False)
-
-        # TODO: Disable Save Button until new values are calculated 
+ 
         self.savePB = self.findChild(QW.QPushButton, 'SaveButton')
         self.savePB = self.SaveButton
         self.savePB.clicked.connect(self.saveData)
