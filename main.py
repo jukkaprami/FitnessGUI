@@ -173,6 +173,11 @@ class Mainwindow(QW.QMainWindow):
         self.nameLE.clear()
         zeroDate = QtCore.QDate(1900, 1, 1)
         self.birthDateE.setDate(zeroDate)
+        self.heightSB.setValue(100)
+        self.weightSB.setValue(20)
+        self.neckSB.setvalue(10)
+        self.waistSB.setvalue(30)
+        self.hipsSB.setvalue(50)
 
  
 if __name__ == "__main__":
