@@ -173,7 +173,7 @@
      <string>Vyötärö</string>
     </property>
    </widget>
-   <widget class="QSpinBox" name="Hip">
+   <widget class="QSpinBox" name="Hips">
     <property name="geometry">
      <rect>
       <x>430</x>

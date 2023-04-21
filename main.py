@@ -44,9 +44,9 @@ class Mainwindow(QW.QMainWindow):
         self.neckSB.valueChanged.connect(self.activateCalculatePB)
         self.waistSB = self.Waist
         self.waistSB.valueChanged.connect(self.activateCalculatePB)
-        self.hipSB = self.Hip
-        self.hipSB.setEnabled(False)
-        self.hipSB = self.hipSB.valueChanged.connect(self.activateCalculatePB)
+        self.hipsSB = self.Hips
+        self.hipsSB.setEnabled(False)
+        self.hipsSB = self.hipsSB.valueChanged.connect(self.activateCalculatePB)
         
         # self.CalculatePB = self.CalculateButton
         self.CalculatePB = self.findChild(QW.QPushButton,'CalculateButton')
@@ -84,11 +84,11 @@ class Mainwindow(QW.QMainWindow):
             self.CalculatePB.setEnabled(False)
 
         if self.GenderChoose.currentText() == 'Nainen':
-            self.hipSB.setEnabled (True)
-            if self.hipSB.value() == 50:
+            self.hipsSB.setEnabled (True)
+            if self.hipsSB.value() == 50:
              self.CalculatePB.setEnable(False)
         else:
-            self.hipSB.setEnabled(False)
+            self.hipsSB.setEnabled(False)
 
      # Calculates BMI, Finnish and US fat percentages and updates correspoding labels    
 
@@ -117,27 +117,29 @@ class Mainwindow(QW.QMainWindow):
 
         neck = self.neckSB.value()
         waist = self.waistSB.value()
-        hip = self.hipSB.value()
+        hips = self.hipsSB.value()
 
         if age >=18:
-            # Create and athelete from kuntoilija class
-            athlete = kuntoilija.Kuntoilija(name, height, weight, age, gender)
-            bmi = athlete.bmi
 
-        else:
-            athelete = kuntoilija.juniorikuntoilija(name, height, weight, age, gender)
+        athlete = kuntoilija.Kuntoilija(name, height, weight, age, gender, dateofweighing
+                                         
+    else:
+    
+        
+    
+        athelete = kuntoilija.
 
-        bmi = athlete.bmi
+        bmi = athelete.bmi
         self.BMILabel.setText(str(bmi))
 
         label_9 = athelete.rasvaprosentti()
 
-        adultFatPercentange = athlete.rasvaprosentti()
+        adultFatPercentange = athelete.rasvaprosentti()
 
         if gender == 1:
-            USAFatPercentange = athlete.usa_rasvaprosentti_mies(height, waist, neck,)
+            USAFatPercentange = athelete.usa_rasvaprosentti_mies(height, waist, neck,)
         else:
-            USAFatPercentange = athlete.usa_rasvaprosentti_nainen(height, waist, neck, hip)
+            USAFatPercentange = athelete.usa_rasvaprosentti_nainen(height, waist, neck, hip)
 
         self.label_9.setText(str(adultFatPercentange))
         self.label_10.setText(str(USAFatPercentange))
