@@ -87,6 +87,8 @@ class Mainwindow(QW.QMainWindow):
             self.hipSB.setEnabled (True)
             if self.hipSB.value() == 50:
              self.CalculatePB.setEnable(False)
+        else:
+            self.hipSB.setEnabled(False)
 
      # Calculates BMI, Finnish and US fat percentages and updates correspoding labels    
 
