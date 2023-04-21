@@ -142,7 +142,11 @@ class Mainwindow(QW.QMainWindow):
         self.label_9.setText(str(adultFatPercentange))
         self.label_10.setText(str(USAFatPercentange))
 
-    # TODO: Make this method to save results to disk drive
+    def constructData(self, athelete, adultFatPercentage, UsaFatPercentage):
+        # A dictionary for single weighting of an athelete
+        athlete_data_row = {'nimi': athelete.nimi, 'paino': athelete.paino, 'pituus': athelete.pituus, 'ika': athelete.ika, 'sukupuoli': athelete.sukupuoli, 'paiva': athelete.punnitus_paiva, 'bmi':athelete.bmi, 'rasvaprosenttiFi': adultFatPercentage, 'rasvaprosenttiUsa': UsaFatPercentage}
+        return athlete_data_row
+    
     # Saves data to disk
     def saveData(self):
         pass

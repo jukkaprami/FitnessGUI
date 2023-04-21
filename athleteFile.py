@@ -12,24 +12,45 @@ class ProcessJsonFile(object):
         pass
 
     def saveData(self,file):
-        """_summary_
+        """Saves all athelete data to disk
 
         Args:
             file (str): Name of the file
             data (list): List of dictionaries
 
         Returns:
-            _type_: error code, error message, detailed error message
+            tuple: Error code, Error message, detailed error message
         """
         status = (0, 'Tallennus onnistui', 'All data saved succesfully')
         return status
 
-    def readData(self,arg):
-        pass
+    def readData(self,file):
+        """Reads athelete data from file
+
+        Args:
+            file (str): Name of the file
+
+        Returns:
+            tuple: Error code, Error Message, deatiled error message, data
+        """
+        data = (0, message, detailedMessage, readinfo)
+        return data
 
 
-    def appenData(self, arg):
-        pass
+    def appenData(self, file, data):
+        """Adds a new json object to the file
+
+        Args:
+            file (str): Name of the file
+            data (dict): python dictionary containing data
+
+        Returns:
+            tuple: Error code, Error message, detailed error message
+        """
+
+        status = (0, 'Tallennus onnistui', 'All data saved succesfully')
+        return status
+        
 
 # PRELIMINARY TESTS
 
