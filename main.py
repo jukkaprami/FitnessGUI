@@ -178,6 +178,7 @@ class Mainwindow(QW.QMainWindow):
         self.neckSB.setvalue(10)
         self.waistSB.setvalue(30)
         self.hipsSB.setvalue(50)
+        self.savePB.setenable(False)
 
  
 if __name__ == "__main__":
