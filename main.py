@@ -46,7 +46,7 @@ class Mainwindow(QW.QMainWindow):
         self.waistSB.valueChanged.connect(self.activateCalculatePB)
         self.hipsSB = self.Hips
         self.hipsSB.setEnabled(False)
-        self.hipsSB = self.hipsSB.valueChanged.connect(self.activateCalculatePB)
+        self.hipsSB.valueChanged.connect(self.activateCalculatePB)
         
         # self.CalculatePB = self.CalculateButton
         self.CalculatePB = self.findChild(QW.QPushButton,'CalculateButton')
@@ -85,8 +85,10 @@ class Mainwindow(QW.QMainWindow):
 
         if self.GenderChoose.currentText() == 'Nainen':
             self.hipsSB.setEnabled (True)
+
             if self.hipsSB.value() == 50:
-             self.CalculatePB.setEnable(False)
+             self.CalculatePB.setEnabled(False)
+
         else:
             self.hipsSB.setEnabled(False)
 
@@ -121,32 +123,34 @@ class Mainwindow(QW.QMainWindow):
 
         if age >=18:
 
-        athlete = kuntoilija.Kuntoilija(name, height, weight, age, gender, dateofweighing
+            athlete = kuntoilija.Kuntoilija(name, height, weight, age, gender, dateofweighing)
                                          
-    else:
-    
+        else:
+            athlete = kuntoilija.JunioriKuntoilija(name, height, weight, age, gender)
         
-    
-        athelete = kuntoilija.
-
-        bmi = athelete.bmi
+        bmi = athlete.bmi
         self.BMILabel.setText(str(bmi))
 
-        label_9 = athelete.rasvaprosentti()
+        label_9 = athlete.rasvaprosentti()
 
-        adultFatPercentange = athelete.rasvaprosentti()
+        adultFatPercentange = athlete.rasvaprosentti()
+        USAFatPercentange = round(athlete.usa_rasva, 1)
 
         if gender == 1:
-            USAFatPercentange = athelete.usa_rasvaprosentti_mies(height, waist, neck,)
+            USAFatPercentange = athlete.usa_rasvaprosentti_mies(height, waist, neck,)
         else:
-            USAFatPercentange = athelete.usa_rasvaprosentti_nainen(height, waist, neck, hip)
+            USAFatPercentange = athlete.usa_rasvaprosentti_nainen(height, waist, neck, hips)
 
         self.label_9.setText(str(adultFatPercentange))
         self.label_10.setText(str(USAFatPercentange))
 
+
+        self.dataRow = self.constructData(athlete)
+        print(self.dataRow)
+
     def constructData(self, athelete, adultFatPercentage, UsaFatPercentage):
         # A dictionary for single weighting of an athelete
-        athlete_data_row = {'nimi': athelete.nimi, 'paino': athelete.paino, 'pituus': athelete.pituus, 'ika': athelete.ika, 'sukupuoli': athelete.sukupuoli, 'paiva': athelete.punnitus_paiva, 'bmi':athelete.bmi, 'rasvaprosenttiFi': adultFatPercentage, 'rasvaprosenttiUsa': UsaFatPercentage}
+        athlete_data_row = {'nimi': athelete.nimi, 'paino': athelete.paino, 'pituus': athelete.pituus, 'ika': athelete.ika, 'sukupuoli': athelete.sukupuoli, 'paiva': athelete.punnitus_paiva, 'bmi':athelete.bmi, 'rasvaprosenttiFi': athelete.fi_rasva, 'rasvaprosenttiUsa': athelete.usa_rasva}
         return athlete_data_row
     
     # Saves data to disk
