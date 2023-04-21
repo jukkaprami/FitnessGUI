@@ -100,7 +100,7 @@ class Mainwindow(QW.QMainWindow):
         birthday = self.birthDateE.date().toString(format=QtCore.Qt.ISODate)
 
         # Set Gender value according to ComboBox value
-        gendertext = self.genderComboBox.currentText()
+        gendertext = self.GenderChoose.currentText()
         if gendertext == 'Mies':
             gender = 1
 

@@ -1,0 +1,42 @@
+[
+    {
+        "nimi": "jukka",
+        "paino": 125.0,
+        "pituus": 181.0,
+        "ika": 39,
+        "sukupuoli": 1,
+        "paiva": "2023-03-21"
+    },
+    {
+        "nimi": "essi",
+        "paino": 71.0,
+        "pituus": 182.0,
+        "ika": 37,
+        "sukupuoli": 0,
+        "paiva": "2023-03-22"
+    },
+    {
+        "nimi": "erkki",
+        "paino": 80.0,
+        "pituus": 180.0,
+        "ika": 51,
+        "sukupuoli": 1,
+        "paiva": "2023-03-22"
+    },
+    {
+        "nimi": "jukka",
+        "paino": 125.0,
+        "pituus": 181.0,
+        "ika": 39,
+        "sukupuoli": 1,
+        "paiva": "2023-03-21"
+    },
+    {
+        "nimi": "marko",
+        "paino": 73.0,
+        "pituus": 174.0,
+        "ika": 50,
+        "sukupuoli": 1,
+        "paiva": "2023-03-22"
+    }
+]
