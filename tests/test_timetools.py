@@ -12,5 +12,5 @@ def test_datediff():
 
 # Test if datediff function calculates correct and absolute values
 def test_timediff():
-    assert timetools.timediff('11:30:15', '10:10:05') == 1,3361111111111
-    assert timetools.timediff('10:10:05', '11:30:15') == 1,3361111111111
+    assert round(timetools.timediff('11:30:15', '10:10:05'), 4) == 1.3361
+    assert round(timetools.timediff('10:10:05', '11:30:15'), 4) == 1.3361

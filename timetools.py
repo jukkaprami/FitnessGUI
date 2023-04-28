@@ -28,8 +28,13 @@ def timediff(t1, t2):
     t1 = datetime.datetime.strptime(t1, "%H:%M:%S")
     t2 = datetime.datetime.strptime(t2, "%H:%M:%S")
 
-    # Function calcultates a timedelta which supports only seconds or microseconds
-    seconds = abs((t2 - t1).seconds)
+    # To get absolute value check if t2 is greater than t1
+    if t2 > t1:
+        # Function calcultates a timedelta which supports only seconds or microseconds
+        seconds = abs((t2 - t1).seconds)
+    else:
+        seconds = abs((t1 - t2).seconds)
+        
     hours = seconds / 3600 # minute 60 seconds, hour 60 minutes
     return hours
 
