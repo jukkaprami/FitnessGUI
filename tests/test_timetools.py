@@ -17,5 +17,10 @@ def test_timediff():
 
 # Test if dateTimeDiff works correctly 
 def test_dateTimeDiff():
-    assert timetools.dateTimeDiff('2023-04-27 10:00:00', '2023-04-8 12:30:00') == 26.5
+    assert timetools.dateTimeDiff('2023-04-27 10:00:00', '2023-04-28 12:30:00') == 26.5
+
+def test_datediff2():
+    assert timetools.datediff2('2023-04-10', '2023-04-12', 'day') == 2
+    assert round(timetools.datediff2('2023-04-10', '2023-06-9', 'month')) == 2
+    assert round(timetools.datediff2('2023-04-10', '2025-04-10', 'year')) == 2
 
