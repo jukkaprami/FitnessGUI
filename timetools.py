@@ -75,6 +75,17 @@ def datediff2(d1, d2, unit):
     value = round(difference / divider, 1)
     return value
 
+def finnishWeekdayOrder(weekday):
+    weekdayNumber = {'maanantai': 1, 'tiistai': 2, 'keskiviikko': 3,
+     'torstai': 4, 'perjantai': 5, 'lauantai': 6,
+     'sunnuntai': 7}
+    try:
+        value = f'{weekday} on viikon {weekdayNumber[weekday]}. päivä'
+    except Exception as error:
+        value = f'{weekday} ei ole viikonpäivä, tarkista syötteesi'
+    return value 
+
+
 def dateTimeDiff2(start, end, unit):
     """Calculates difference between date ime values in given units
 
