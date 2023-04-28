@@ -34,9 +34,29 @@ def timediff(t1, t2):
         seconds = abs((t2 - t1).seconds)
     else:
         seconds = abs((t1 - t2).seconds)
-        
+
     hours = seconds / 3600 # minute 60 seconds, hour 60 minutes
     return hours
+
+def dateTimeDiff(start, end):
+    """Returns difference between two moments
+
+    Args:
+        v1 (str): date time value in format YYY-MMM-dd hh:mm:ss
+        v2 (str): date time value in format YYY-MMM-dd hh:mm:ss
+
+    Returns:
+        float: time difference in hours
+    """
+    v1 = datetime.datetime.strptime(start, "%Y-%m-%d %H:%M:%S")
+    v2 = datetime.datetime.strptime(end, "%Y-%m-%d %H:%M:%S")
+    difference = v2 -v1
+
+    # Total_seconds also calculates seconds in the date part of dates
+    seconds = difference.total_seconds()
+    hours = seconds / 3600
+    return hours
+
 
 def datediff2(d1, d2, unit):
     """Returns difference between 2 dates in chosen unit (day, month or year)
@@ -86,3 +106,6 @@ if __name__ == "__main__":
     time2 = '15:25:00'
     ero = timediff2(time1, time2, 'minute')
     print('ero oli', ero, 'minuuttia')
+
+    print(dateTimeDiff('2023-04-28 10:00:00', '2023-04-29 11:00:00'), 'on v1')
+
