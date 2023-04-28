@@ -75,6 +75,27 @@ def datediff2(d1, d2, unit):
     value = difference / divider
     return value
 
+def dateTimeDiff2(start, end, unit):
+    """Calculates difference between date ime values in given units
+
+    Args:
+        start (str): date time value in format YYYY-MM-dd hh:mm:ss
+        end (str): date time value in format YYYY-MM-dd hh:mm:ss
+        unit (str): name of time unit: day, hour, minute or second
+
+    Returns:
+        float: difference in given units
+    """
+    v1 = datetime.datetime.strptime(start, "%Y-%m-%d %H:%M:%S")
+    v2 = datetime.datetime.strptime(end, "%Y-%m-%d %H:%M:%S")
+    difference = v2 -v1
+    units = {'day':86400, 'hour': 3600, 'minute': 60, 'second':1} # Dictionary for unit dividers
+    divider = units[unit] # Choose by unit argument
+    # Total_seconds also calculates seconds in the date part of dates
+    seconds = difference.total_seconds()
+    Value = seconds / divider
+    return Value
+
 def timediff2(t1, t2, unit):
     """Calculates the difference between two time values in chosen unit (day, minute or second)
     Args:
