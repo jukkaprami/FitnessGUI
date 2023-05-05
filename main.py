@@ -9,6 +9,7 @@ from PyQt5.uic import loadUi # Reads the UI file
 import kuntoilija # Home brew module for athlete objects
 import timetools # DIY module for date and time calculations
 import athleteFile # Home made module for processing data files
+import ohje
 
 
 # Class for the main window
@@ -53,10 +54,14 @@ class MainWindow(QW.QMainWindow):
         self.setStatusBar(self.statusBar)
         self.statusBar.show()
   
-        # self.calculatePB = self.calculatePushButton
+        
         self.calculatePB = self.findChild(QW.QPushButton, 'calculatePushButton')
         self.calculatePB.clicked.connect(self.calculateAll)
         self.calculatePB.setEnabled(False)
+
+        # Temporary push button for a inserting test values
+        self.testPB = self.testUiPushButton
+        self.testPB.clicked.connect(self.insertTestvalues)
 
         # self.savePB = self.savePushButton
         self.savePB = self.findChild(QW.QPushButton, 'savePushButton')
@@ -71,6 +76,10 @@ class MainWindow(QW.QMainWindow):
             self.dataList = data[3]
         except Exception as e:
             data = (1, 'Error', str(e), self.dataList)
+
+        # MENU ACTIONS
+        self.actionPalauta_oletukset(self.restoreDefaults)
+        self.actionOhje.triggered.connect(self.openHelpDialog)
         
         
 
@@ -153,6 +162,16 @@ class MainWindow(QW.QMainWindow):
         else:
             self.hipsSB.setEnabled(False)
 
+    def insertTestvalues(self):
+         # Set test values to all controls
+        self.nameLE.setText('Teppo Testi')
+        zeroDate = QtCore.QDate(1999, 12, 12)
+        self.birthDateE.setDate(testBirthday)
+        self.genderCB.setCurrentText('Mies')
+        self.heightSB.setValue(100)
+        self.weightSB.setValue(20)
+        self.neckSB.setValue(20)
+        self.waistSB.setValue(90)
 
     # Calculates BMI, Finnish and US fat percentages and updates corresponding labels
     def calculateAll(self):
@@ -179,8 +198,9 @@ class MainWindow(QW.QMainWindow):
         # Calculate time difference using our home made tools
         age = timetools.datediff2(birthday, dateOfWeighing, 'year')
         neck = self.neckSB.value()
-        if neck < 20:
-            self.alert('Tarkista kaulan koko', 'Kaulan ympärys liian pieni', 'Kaulan koko voi olla välillä 21 - 60 cm')
+        if neck < 21:
+            #self.alert('Tarkista kaulan koko', 'Kaulan ympärys liian pieni', 'Kaulan koko voi olla välillä 21 - 60 cm')
+            self.showMessageBox('Tarkista kaulan koko', 'kaulan ympärys virheellinen', 'sallitut arvot 21 - 60', 'Warning')
         waist = self.waistSB.value()
         hips = self.hipsSB.value()
 
@@ -225,7 +245,12 @@ class MainWindow(QW.QMainWindow):
         if status[0] != 0:
             self.alert(status[1], status[2])
         else:
-        # Set all inputs on their default values
+            # Set all inputs on their default values
+            self.restoreDefaults()
+
+
+
+    def restoreDefaults(self):
             self.nameLE.clear()
             zeroDate = QtCore.QDate(1900, 1, 1)
             self.birthDateE.setDate(zeroDate)
@@ -235,6 +260,10 @@ class MainWindow(QW.QMainWindow):
             self.waistSB.setValue(30)
             self.hipsSB.setValue(50)
             self.savePB.setEnabled(False)
+
+    def openHelpDialog(self):
+        openHelp = ohje.Openhelp()
+        openHelp.exec()
 
 if __name__ == "__main__":
     # Create the application
