@@ -1,0 +1,90 @@
+[
+    {
+        "nimi": "MikaV",
+        "pituus": 171.0,
+        "paino": 75.0,
+        "ika": 60.86027397260274,
+        "sukupuoli": 1,
+        "pvm": "2023-04-21",
+        "bmi": 25.6,
+        "rasvaprosenttiFi": 28.5,
+        "rasvaprosenttiUs": 26.8
+    },
+    {
+        "nimi": "EssiE",
+        "pituus": 175.0,
+        "paino": 69.0,
+        "ika": 23.126027397260273,
+        "sukupuoli": 0,
+        "pvm": "2023-04-21",
+        "bmi": 22.5,
+        "rasvaprosenttiFi": 26.9,
+        "rasvaprosenttiUs": 26.2
+    },
+    {
+        "nimi": "Testi",
+        "pituus": 189.0,
+        "paino": 90.0,
+        "ika": 29.32054794520548,
+        "sukupuoli": 1,
+        "pvm": "2023-04-21",
+        "bmi": 25.2,
+        "rasvaprosenttiFi": 20.8,
+        "rasvaprosenttiUs": 29.5
+    },
+    {
+        "nimi": "testi5",
+        "pituus": 190.0,
+        "paino": 110.0,
+        "ika": 119.38356164383562,
+        "sukupuoli": 1,
+        "pvm": "2023-04-21",
+        "bmi": 30.5,
+        "rasvaprosenttiFi": 47.9,
+        "rasvaprosenttiUs": 23.6
+    },
+    {
+        "nimi": "testi6",
+        "pituus": 190.0,
+        "paino": 110.0,
+        "ika": 119.38356164383562,
+        "sukupuoli": 1,
+        "pvm": "2023-04-21",
+        "bmi": 30.5,
+        "rasvaprosenttiFi": 47.9,
+        "rasvaprosenttiUs": 26.6
+    },
+    {
+        "nimi": "Testi7",
+        "pituus": 155.0,
+        "paino": 60.0,
+        "ika": 58.30684931506849,
+        "sukupuoli": 0,
+        "pvm": "2023-04-21",
+        "bmi": 25.0,
+        "rasvaprosenttiFi": 38.0,
+        "rasvaprosenttiUs": 8.9
+    },
+    {
+        "nimi": "testi9",
+        "pituus": 180.0,
+        "paino": 90.0,
+        "ika": 24.70958904109589,
+        "sukupuoli": 1,
+        "pvm": "2023-04-21",
+        "bmi": 27.8,
+        "rasvaprosenttiFi": 22.8,
+        "rasvaprosenttiUs": 28.8
+    },
+    {
+        "nimi": "Testi19",
+        "pituus": 180.0,
+        "paino": 100.0,
+        "ika": 24.317808219178083,
+        "sukupuoli": 1,
+        "pvm": "2023-04-21",
+        "bmi": 30.9,
+        "rasvaprosenttiFi": 26.5,
+        "rasvaprosenttiUs": 28.3
+    }
+]

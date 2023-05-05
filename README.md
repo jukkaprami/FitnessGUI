@@ -1,2 +1,2 @@
 # FitnessGUI
-Python based application for monitoring fitness 
+Python based application for monitoring fitness

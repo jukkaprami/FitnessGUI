@@ -50,10 +50,12 @@ class Kuntoilija:
     # Metodit rasvaprosenttien laskemiseen USA:n armeijan metodeilla
     def usa_rasvaprosentti_mies(self, pituus, vyotaron_ymparys, kaulan_ymparys):
         """Laskee miehen rasvaprosentin USA:n armeijan kaavalla
+
         Args:
             pituus (float): pituus (cm)
             vyotaron_ymparys (float): vyötärön ympärysmitta (cm)
             kaulan_ymparys (float): kaulan ympärys (cm)
+
         Returns:
             float: rasvaprosentti
         """
@@ -62,11 +64,13 @@ class Kuntoilija:
 
     def usa_rasvaprosentti_nainen(self, pituus, vyotaron_ymparys, lantion_ymparys, kaulan_ymparys):
         """Laskee kehon rasvaprosentin USA:n armeijan kaavalla
+
         Args:
             pituus (float): pituus (cm)
             vyotaron_ymparys (float): vyötärön ympärysmitta (cm)
             lantion_ymparys (float): lantion ympärysmitta (cm)
             kaulan_ymparys (float): kaulan ympärysmitta (cm)
+
         Returns:
             float: rasvaprosentti
         """
