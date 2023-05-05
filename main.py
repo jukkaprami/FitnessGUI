@@ -49,9 +49,9 @@ class MainWindow(QW.QMainWindow):
         self.hipsSB.valueChanged.connect(self.activateCalculatePB)
 
         # Create a status bar for showing informational messages
-        self.statusbar = QW.QStatusBar()
+        self.statusBar = QW.QStatusBar()
         self.setStatusBar(self.statusBar)
-        self.statusbar.show()
+        self.statusBar.show()
   
         # self.calculatePB = self.calculatePushButton
         self.calculatePB = self.findChild(QW.QPushButton, 'calculatePushButton')
@@ -112,6 +112,7 @@ class MainWindow(QW.QMainWindow):
                 message (str): Message to be show
                 detailedMessage (str): A message that can be shown by pressing detailed button
                 icon (str, optional): Allowed values: NoIcon, Information, Question, Warning and Critical
+                Defaults to information.
             """
             iconTypes = {'Information': QW.QMessageBox.Information, 'NoIcon': QW.QMessageBox.NoIcon, 'Question': QW.QMessageBox.Question, 'Warning' : QW.QMessageBox.Warning , 'Critical': QW.QMessageBox.Critical}
             msgBox = QW.QMessageBox()
