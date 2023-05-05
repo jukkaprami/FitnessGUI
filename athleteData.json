@@ -86,5 +86,16 @@
         "bmi": 30.9,
         "rasvaprosenttiFi": 26.5,
         "rasvaprosenttiUs": 28.3
+    },
+    {
+        "nimi": "jukka",
+        "pituus": 180.0,
+        "paino": 130.0,
+        "ika": 40.0,
+        "sukupuoli": 1,
+        "pvm": "2023-05-05",
+        "bmi": 40.1,
+        "rasvaprosenttiFi": 41.1,
+        "rasvaprosenttiUs": -3.2
     }
 ]
