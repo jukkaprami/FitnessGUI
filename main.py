@@ -78,7 +78,7 @@ class MainWindow(QW.QMainWindow):
             data = (1, 'Error', str(e), self.dataList)
 
         # MENU ACTIONS
-        self.actionPalauta_oletukset(self.restoreDefaults)
+        self.actionPalauta_oletukset.triggered.connect(self.restoreDefaults)
         self.actionOhje.triggered.connect(self.openHelpDialog)
         
         
