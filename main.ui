@@ -299,7 +299,7 @@
     <property name="locale">
      <locale language="Finnish" country="Finland"/>
     </property>
-    <property name="placeholderText" stdset="0">
+    <property name="placeholderText">
      <string>Valitse sukupuoli</string>
     </property>
     <item>
@@ -426,11 +426,120 @@
      <x>0</x>
      <y>0</y>
      <width>800</width>
-     <height>26</height>
+     <height>21</height>
     </rect>
    </property>
+   <widget class="QMenu" name="menuTiedosto">
+    <property name="title">
+     <string>Tiedosto</string>
+    </property>
+    <widget class="QMenu" name="menuJaa">
+     <property name="title">
+      <string>Jaa</string>
+     </property>
+     <addaction name="actionFacebook"/>
+     <addaction name="actionTwitter_2"/>
+    </widget>
+    <widget class="QMenu" name="menuAsetukset">
+     <property name="title">
+      <string>Asetukset</string>
+     </property>
+     <addaction name="actionUlkoasu"/>
+     <addaction name="actionKieli"/>
+    </widget>
+    <addaction name="separator"/>
+    <addaction name="actionPrint"/>
+    <addaction name="separator"/>
+    <addaction name="menuJaa"/>
+    <addaction name="menuAsetukset"/>
+    <addaction name="actionSulje"/>
+    <addaction name="actionY_tila"/>
+   </widget>
+   <widget class="QMenu" name="menuMuokkaa">
+    <property name="title">
+     <string>Muokkaa</string>
+    </property>
+    <addaction name="actionAutomaattinen_Tallennus"/>
+    <addaction name="actionPoista_k_ytt_j"/>
+   </widget>
+   <widget class="QMenu" name="menuAbout">
+    <property name="title">
+     <string>About</string>
+    </property>
+    <addaction name="actionHelp"/>
+   </widget>
+   <addaction name="menuTiedosto"/>
+   <addaction name="menuMuokkaa"/>
+   <addaction name="menuAbout"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionPrint">
+   <property name="text">
+    <string>Print</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+P</string>
+   </property>
+  </action>
+  <action name="actionFacebook">
+   <property name="text">
+    <string>Facebook</string>
+   </property>
+  </action>
+  <action name="actionTwitter_2">
+   <property name="text">
+    <string>Twitter</string>
+   </property>
+  </action>
+  <action name="actionUlkoasu">
+   <property name="text">
+    <string>Ulkoasu</string>
+   </property>
+  </action>
+  <action name="actionKieli">
+   <property name="text">
+    <string>Kieli</string>
+   </property>
+  </action>
+  <action name="actionSulje">
+   <property name="text">
+    <string>Sulje</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Q</string>
+   </property>
+  </action>
+  <action name="actionY_tila">
+   <property name="text">
+    <string>Yötila</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Y</string>
+   </property>
+  </action>
+  <action name="actionEdit">
+   <property name="text">
+    <string>Edit</string>
+   </property>
+  </action>
+  <action name="actionHelp">
+   <property name="text">
+    <string>Help</string>
+   </property>
+   <property name="shortcut">
+    <string>F10</string>
+   </property>
+  </action>
+  <action name="actionAutomaattinen_Tallennus">
+   <property name="text">
+    <string>Automaattinen Tallennus</string>
+   </property>
+  </action>
+  <action name="actionPoista_k_ytt_j">
+   <property name="text">
+    <string>Poista käyttäjä...</string>
+   </property>
+  </action>
  </widget>
  <resources/>
  <connections/>
