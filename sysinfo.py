@@ -6,6 +6,25 @@ import socket
 import uuid
 import re
 
+# import speedtest module 
+import speedtest
+
+speed_test = speedtest.Speedtest()
+
+download_speed = speed_test.download()
+print("Your Download speed is", download_speed) 
+
+upload_speed = speed_test.upload()
+print("Your Upload speed is", upload_speed)
+
+
+def bytes_to_mb(bytes):
+  KB = 1024 # One Kilobyte is 1024 bytes
+  MB = KB * 1024 # One MB is 1024 KB
+  return int(bytes/MB)
+
+val = bytes_to_mb(1024 * 1024)
+print(val)
 
 def get_size(bytes, suffix="B"):
     """
@@ -122,7 +141,6 @@ def System_information():
     net_io = psutil.net_io_counters()
     print(f"Total Bytes Sent: {get_size(net_io.bytes_sent)}")
     print(f"Total Bytes Received: {get_size(net_io.bytes_recv)}")
-
 
 if __name__ == "__main__":
 
