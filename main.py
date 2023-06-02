@@ -11,6 +11,8 @@ import timetools # DIY module for date and time calculations
 import athleteFile # Home made module for processing data files
 import ohje
 import BGPictures # Compiled resources for background images
+
+# TODO: Make another resource file for the help window, build it and import it
 # TODO: Import some library able to plot trends and make it as widget in the UI
 
 # Class for the main window
@@ -38,6 +40,7 @@ class MainWindow(QW.QMainWindow):
         # Set the weighing date to the current date
         self.weighingDateE.setDate(QtCore.QDate.currentDate()) 
 
+        # TODO: Change spin boxes to sliders adn add labels to show values 
         self.heightSB = self.heightSpinBox
         self.heightSB.valueChanged.connect(self.activateCalculatePB)
         self.weightSB = self.weightSpinBox

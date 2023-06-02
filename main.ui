@@ -301,76 +301,6 @@
     <property name="frameShadow">
      <enum>QFrame::Raised</enum>
     </property>
-    <widget class="QSpinBox" name="neckSpinBox">
-     <property name="geometry">
-      <rect>
-       <x>190</x>
-       <y>190</y>
-       <width>71</width>
-       <height>41</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <pointsize>24</pointsize>
-      </font>
-     </property>
-     <property name="alignment">
-      <set>Qt::AlignCenter</set>
-     </property>
-     <property name="minimum">
-      <number>10</number>
-     </property>
-    </widget>
-    <widget class="QSpinBox" name="waistSpinBox">
-     <property name="geometry">
-      <rect>
-       <x>190</x>
-       <y>430</y>
-       <width>81</width>
-       <height>41</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <pointsize>24</pointsize>
-      </font>
-     </property>
-     <property name="alignment">
-      <set>Qt::AlignCenter</set>
-     </property>
-     <property name="minimum">
-      <number>30</number>
-     </property>
-     <property name="maximum">
-      <number>200</number>
-     </property>
-    </widget>
-    <widget class="QSpinBox" name="hipsSpinBox">
-     <property name="geometry">
-      <rect>
-       <x>180</x>
-       <y>530</y>
-       <width>101</width>
-       <height>41</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <family>MS Shell Dlg 2</family>
-       <pointsize>24</pointsize>
-      </font>
-     </property>
-     <property name="alignment">
-      <set>Qt::AlignCenter</set>
-     </property>
-     <property name="minimum">
-      <number>50</number>
-     </property>
-     <property name="maximum">
-      <number>200</number>
-     </property>
-    </widget>
     <widget class="QLabel" name="label_13">
      <property name="geometry">
       <rect>
@@ -514,6 +444,122 @@
      <bool>true</bool>
     </property>
    </widget>
+   <widget class="QSlider" name="horizontalSliderNeck">
+    <property name="geometry">
+     <rect>
+      <x>500</x>
+      <y>210</y>
+      <width>160</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="minimum">
+     <number>10</number>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_4Neck">
+    <property name="geometry">
+     <rect>
+      <x>550</x>
+      <y>240</y>
+      <width>47</width>
+      <height>13</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>24</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>TextLabel</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_4Waist">
+    <property name="geometry">
+     <rect>
+      <x>530</x>
+      <y>440</y>
+      <width>47</width>
+      <height>13</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>24</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+      <strikeout>false</strikeout>
+      <kerning>false</kerning>
+     </font>
+    </property>
+    <property name="text">
+     <string>TextLabel</string>
+    </property>
+   </widget>
+   <widget class="QSlider" name="horizontalSliderHip">
+    <property name="geometry">
+     <rect>
+      <x>500</x>
+      <y>530</y>
+      <width>160</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="minimum">
+     <number>30</number>
+    </property>
+    <property name="maximum">
+     <number>200</number>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_4Hip">
+    <property name="geometry">
+     <rect>
+      <x>550</x>
+      <y>560</y>
+      <width>47</width>
+      <height>13</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>24</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>TextLabel</string>
+    </property>
+   </widget>
+   <widget class="QSlider" name="horizontalSliderWaist">
+    <property name="geometry">
+     <rect>
+      <x>490</x>
+      <y>460</y>
+      <width>160</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="minimum">
+     <number>30</number>
+    </property>
+    <property name="maximum">
+     <number>200</number>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
@@ -650,9 +696,6 @@
   <tabstop>genderComboBox</tabstop>
   <tabstop>weightSpinBox</tabstop>
   <tabstop>heightSpinBox</tabstop>
-  <tabstop>neckSpinBox</tabstop>
-  <tabstop>waistSpinBox</tabstop>
-  <tabstop>hipsSpinBox</tabstop>
   <tabstop>calculatePushButton</tabstop>
   <tabstop>savePushButton</tabstop>
   <tabstop>weighingDateEdit</tabstop>
@@ -660,5 +703,54 @@
  <resources>
   <include location="BGPictures.qrc"/>
  </resources>
- <connections/>
+ <connections>
+  <connection>
+   <sender>horizontalSliderNeck</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>label_4Neck</receiver>
+   <slot>setNum(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>577</x>
+     <y>239</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>581</x>
+     <y>265</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>horizontalSliderHip</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>label_4Hip</receiver>
+   <slot>setNum(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>628</x>
+     <y>565</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>582</x>
+     <y>591</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>horizontalSliderWaist</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>label_4Waist</receiver>
+   <slot>setNum(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>562</x>
+     <y>486</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>565</x>
+     <y>466</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>
