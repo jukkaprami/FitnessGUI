@@ -1,14 +1,14 @@
 # HELP DIALOG WINDOW
-# ==================
+# ===================
 
 # LIBRARIES AND MODULES
-import typing
 from PyQt5 import QtWidgets as QW # UI elements functionality
-from PyQt5.uic import loadUi # Reads UI file
-
+from PyQt5.uic import loadUi # Reads the UI file
 
 # CLASS DEFINITION
-class Openhelp(QW.QDialog):
+class OpenHelp(QW.QDialog):
+
+    # The constructor
     def __init__(self):
         super().__init__()
 
@@ -17,10 +17,7 @@ class Openhelp(QW.QDialog):
         self.closePB = self.closePushButton
         self.closePB.clicked.connect(self.closeHelp)
 
-
-# Methods ie. slots
-def closeHelp(self):
-    self.close()
-
-
-
+    # Methods ie. slots
+    def closeHelp(self):
+        self.close()
+        

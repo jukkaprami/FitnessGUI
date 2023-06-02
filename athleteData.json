@@ -88,14 +88,80 @@
         "rasvaprosenttiUs": 28.3
     },
     {
-        "nimi": "jukka",
-        "pituus": 180.0,
-        "paino": 130.0,
-        "ika": 40.0,
+        "nimi": "MikaV",
+        "pituus": 171.0,
+        "paino": 75.0,
+        "ika": 60.9,
         "sukupuoli": 1,
         "pvm": "2023-05-05",
-        "bmi": 40.1,
-        "rasvaprosenttiFi": 41.1,
-        "rasvaprosenttiUs": -3.2
+        "bmi": 25.6,
+        "rasvaprosenttiFi": 28.5,
+        "rasvaprosenttiUs": 28.7
+    },
+    {
+        "nimi": "MikaV",
+        "pituus": 171.0,
+        "paino": 75.0,
+        "ika": 122.9,
+        "sukupuoli": 1,
+        "pvm": "2023-05-05",
+        "bmi": 25.6,
+        "rasvaprosenttiFi": 42.8,
+        "rasvaprosenttiUs": 28.7
+    },
+    {
+        "nimi": "MikaV",
+        "pituus": 171.0,
+        "paino": 75.0,
+        "ika": 60.9,
+        "sukupuoli": 1,
+        "pvm": "2023-05-05",
+        "bmi": 25.6,
+        "rasvaprosenttiFi": 28.5,
+        "rasvaprosenttiUs": 30.4
+    },
+    {
+        "nimi": "Teppo Testi",
+        "pituus": 171.0,
+        "paino": 75.0,
+        "ika": 23.4,
+        "sukupuoli": 1,
+        "pvm": "2023-05-05",
+        "bmi": 25.6,
+        "rasvaprosenttiFi": 19.9,
+        "rasvaprosenttiUs": 32.6
+    },
+    {
+        "nimi": "Teppo Testi",
+        "pituus": 171.0,
+        "paino": 75.0,
+        "ika": 23.4,
+        "sukupuoli": 1,
+        "pvm": "2023-05-05",
+        "bmi": 25.6,
+        "rasvaprosenttiFi": 19.9,
+        "rasvaprosenttiUs": 26.8
+    },
+    {
+        "nimi": "Testi",
+        "pituus": 171.0,
+        "paino": 75.0,
+        "ika": 60.9,
+        "sukupuoli": 1,
+        "pvm": "2023-05-17",
+        "bmi": 25.6,
+        "rasvaprosenttiFi": 28.5,
+        "rasvaprosenttiUs": 28.7
+    },
+    {
+        "nimi": "Jonne",
+        "pituus": 179.0,
+        "paino": 80.0,
+        "ika": 23.9,
+        "sukupuoli": 1,
+        "pvm": "2023-05-17",
+        "bmi": 25.0,
+        "rasvaprosenttiFi": 19.3,
+        "rasvaprosenttiUs": 27.3
     }
 ]
