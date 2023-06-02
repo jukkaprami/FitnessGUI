@@ -41,16 +41,16 @@ class MainWindow(QW.QMainWindow):
         self.weighingDateE.setDate(QtCore.QDate.currentDate()) 
 
         # TODO: Change spin boxes to sliders adn add labels to show values 
-        self.heightSB = self.heightSpinBox
-        self.heightSB.valueChanged.connect(self.activateCalculatePB)
-        self.weightSB = self.weightSpinBox
-        self.weightSB.valueChanged.connect(self.activateCalculatePB)
-        self.neckSB =  self.neckSpinBox
-        self.neckSB.valueChanged.connect(self.activateCalculatePB)
-        self.waistSB = self.waistSpinBox
-        self.waistSB.valueChanged.connect(self.activateCalculatePB)
-        self.hipsSB = self.hipsSpinBox
-        self.hipsSB.valueChanged.connect(self.activateCalculatePB)
+        self.heightSV = self.verticalSliderHeight
+        self.heightSV.valueChanged.connect(self.activateCalculatePB)
+        self.weightDial = self.dialWeight
+        self.weightDial.valueChanged.connect(self.activateCalculatePB)
+        self.neckHS =  self.horizontalSliderNeck
+        self.neckHS.valueChanged.connect(self.activateCalculatePB)
+        self.waistHS = self
+        self.waistHS.valueChanged.connect(self.activateCalculatePB)
+        self.hipsHS = self.hipsSpinBox
+        self.hipsHS.valueChanged.connect(self.activateCalculatePB)
 
         # Background image for body dimensions is a QFrame with a background image by default a woman
         self.dimensionBox = self.dimensionFrame
