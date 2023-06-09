@@ -37,5 +37,5 @@ while lives > 0:
             print ('voitit!, salainen sana oli ' + secret_word)
             break
 
-if runtest = 0:
+if runtest-0:
         yhdeksanhenkea()
